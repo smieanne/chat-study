@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ChatGPT Clone</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="messages">
+    <div
+      *ngFor="let message of messages"
+      [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}"
+    >
+      {{ message.text }}
+    </div>
+  </div>
+
+  <!-- エラーメッセージがある場合に表示 -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <ion-footer>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="userInput"
+        placeholder="Type your message..."
+      ></ion-input>
+      <ion-button (click)="sendMessage()">Send</ion-button>
+    </ion-item>
+  </ion-footer>
+</ion-content>

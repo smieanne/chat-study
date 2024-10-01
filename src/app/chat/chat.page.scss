@@ -1,0 +1,28 @@
+.messages {
+  padding: 10px;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+
+.user-message {
+  text-align: right;
+  background-color: #dcf8c6;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.bot-message {
+  text-align: left;
+  background-color: #39c7b0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
