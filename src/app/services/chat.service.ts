@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ChatService {
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = environment.openaiApiKey;
+  private apiKey = process.env['OPENAI_API_KEY'];
 
   async sendMessage(prompt: string): Promise<any> {
     try {
