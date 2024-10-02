@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-import axios, { AxiosError } from 'axios'; // AxiosError 型をインポート
+import axios from 'axios';
 import { environment } from 'src/environments/environment'; // 環境設定ファイルをインポート
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChatService {
-  private apiUrl = 'https://api.openai.com/v1/chat/completions';
+  private apiUrl = environment.apiUrl;
   private apiKey = environment.openaiApiKey;
+
+  constructor() {
+    console.log('API URL:', this.apiUrl);
+    console.log('API Key:', this.apiKey ? '存在します' : '存在しません'); // デバッグ用
+  }
 
   async sendMessage(prompt: string): Promise<any> {
     if (!this.apiKey) {
@@ -35,7 +40,6 @@ export class ChatService {
       );
       return response.data;
     } catch (error) {
-      // エラーがAxiosError型かどうかを確認
       if (axios.isAxiosError(error)) {
         console.error(
           'Error sending message to OpenAI:',
@@ -44,7 +48,7 @@ export class ChatService {
       } else {
         console.error('An unexpected error occurred:', error);
       }
-      throw error; // 呼び出し元にエラーを再投げ
+      throw error;
     }
   }
 }
