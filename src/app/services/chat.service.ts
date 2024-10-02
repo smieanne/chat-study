@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosError } from 'axios'; // AxiosError 型をインポート
-import { environment } from 'src/environments/environment.local'; // 環境設定ファイルをインポート
+import { environment } from 'src/environments/environment'; // 環境設定ファイルをインポート
 
 @Injectable({
   providedIn: 'root',
