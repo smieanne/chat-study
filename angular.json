@@ -78,12 +78,14 @@
           "options": {
             "customWebpackConfig": {
               "path": "./webpack.config.js"
+            }
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
+              "browserTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
