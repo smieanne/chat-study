@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { environment } from 'src/environments/environment.local'; // 環境設定ファイルをインポート
+import { environment } from 'src/environments/environment'; // 環境設定ファイルをインポート
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChatService {
   private apiUrl = environment.apiUrl;
-  private apiKey = environment.openaiApiKey;
+  private apiKey = environment.openaiApiKey || '';
 
   constructor() {
     console.log('API URL:', this.apiUrl);
