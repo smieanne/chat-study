@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment'; // 環境設定フ�
 })
 export class ChatService {
   private apiUrl = environment.apiUrl;
-  private apiKey = process.env['OPENAI_API_KEY'] || '';
+  private apiKey = environment.openaiApiKey || '';
 
   constructor() {
     console.log('API URL:', this.apiUrl);
