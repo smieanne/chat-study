@@ -70,7 +70,6 @@ testem.log
 Thumbs.db
 
 # Ignore environment files
-src/environments/environment.ts
-src/environments/environment.prod.ts
+
 src/environments/environment.local.ts
 
